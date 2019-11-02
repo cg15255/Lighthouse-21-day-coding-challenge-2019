@@ -1,7 +1,8 @@
 # 2019 Lighthouse Labs 21 Day Coding Challenge
 ## I will be posting all of the challenges here and the solutions in the index.js file
+#### **Note that I am using VS Code and have Prettier enabled and one of my Prettier rules is to remove semicolons. Please don't message me saying I forgot semicolons! :)
 
-### Day 1: 
+### Day 1:
 
 CHALLENGE:
 Our challenge begins in Codeville, a small but thriving town in Serverside, Canada, where you are the current mayor nearing the end of your first term. Election season is nearing, and this town needs you, so you've decided to run for a second term. However, you need some help to make sure the election and your campaign run smoothly. Enter JavaScript, a coding language sure to help you optimize the many elements of the upcoming election and (hopefully) secure your return as Mayor.
@@ -31,7 +32,7 @@ Input:
       'Clay Park',
       'Fox Nest'
     ];
-    
+
 Output:
 2
 
