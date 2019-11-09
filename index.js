@@ -60,22 +60,6 @@ const chooseStations = stations => {
 
 // DAY 6
 
-const voter_signatures = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Fake McFakerson",
-  "Jane Janesford"
-]
-
-const voter_ids = [
-  "Bill Billiamson",
-  "Kate Etak",
-  "Brandon Brandonus",
-  "Fake McFakerson",
-  "Jane Janesford"
-]
-
 const voterTurnout = (voter_signatures, voter_ids) => {
   let signaturesMatchIds = true
 
@@ -95,4 +79,32 @@ const voterTurnout = (voter_signatures, voter_ids) => {
   } else {
     return "FRAUD!"
   }
+}
+
+// DAY 7
+
+const termTopics = interviews => {
+  const totals = interviews.reduce(
+    (totals, interview) => {
+      if (interview === "smart city") {
+        totals[0]++
+      }
+      if (interview === "arts funding") {
+        totals[1]++
+      }
+      if (interview === "transportation") {
+        totals[2]++
+      }
+      return totals
+    },
+    [0, 0, 0]
+  )
+  return totals
+}
+
+// DAY 8
+
+const smartGarbage = (trash, bins) => {
+  bins[trash]++
+  return bins
 }
