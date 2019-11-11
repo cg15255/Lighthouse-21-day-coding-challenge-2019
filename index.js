@@ -115,3 +115,31 @@ const carPassing = (cars, speed) => {
   ]
   return newCars
 }
+
+// DAY 10
+
+const whereCanIPark = (spots, vehicle) => {
+  const availableSpots = []
+  // Double forEach loop to loop through each row and push the x-y coordinates if a spot is available
+  spots.forEach((spotRow, y) => {
+    spotRow.forEach((spotCol, x) => {
+      if (vehicle === "regular" && spotCol === "R") {
+        availableSpots.push([x, y])
+      } else if (vehicle === "small" && (spotCol === "R" || spotCol === "S")) {
+        availableSpots.push([x, y])
+      } else if (
+        vehicle === "motorcycle" &&
+        (spotCol === "R" || spotCol === "S" || spotCol === "M")
+      ) {
+        availableSpots.push([x, y])
+      }
+    })
+  })
+  if (availableSpots.length === 0) {
+    // No available spots
+    return false
+  } else {
+    // Since the question doesn't specify which value you return as long as it is valid, return the first value.
+    return availableSpots[0]
+  }
+}
