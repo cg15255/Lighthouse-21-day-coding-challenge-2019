@@ -143,3 +143,13 @@ const whereCanIPark = (spots, vehicle) => {
     return availableSpots[0]
   }
 }
+
+// DAY 11
+
+const busTimes = buses =>
+  Object.entries(buses).reduce((busStopTimes, busStop) => {
+    const [townName, details] = busStop
+    const time = details.distance / details.speed
+    busStopTimes[townName] = time
+    return busStopTimes
+  }, {})
