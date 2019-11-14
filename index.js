@@ -155,10 +155,11 @@ const busTimes = buses =>
   }, {});
 
 // DAY 12
+
 const checkAir = function(samples, threshold) {
   const totals = samples.reduce(
-    (obj, result) => {
-      obj[result]++;
+    (obj, sample) => {
+      obj[sample]++;
       return obj;
     },
     { clean: 0, dirty: 0 }
@@ -168,5 +169,29 @@ const checkAir = function(samples, threshold) {
     return "Clean";
   } else {
     return "Polluted";
+  }
+};
+
+// DAY 13
+
+const lightsOn = function(lights) {
+  lights.forEach(light => {
+    light.on = true;
+  });
+  return lights;
+};
+
+const lightsOff = function(lights) {
+  lights.forEach(light => {
+    light.on = false;
+  });
+  return lights;
+};
+
+const toggleLights = function(lights, lightsAreOn) {
+  if (lightsAreOn) {
+    return lightsOff(lights);
+  } else {
+    return lightsOn(lights);
   }
 };
