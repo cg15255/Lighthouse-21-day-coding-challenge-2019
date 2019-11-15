@@ -195,3 +195,16 @@ const toggleLights = function(lights, lightsAreOn) {
     return lightsOn(lights);
   }
 };
+
+// DAY 14
+
+const dynamicPricing = (numberOfPeople, distanceTraveled) => {
+  const basePrice = 1;
+  const distanceCharge = distanceTraveled * 0.25;
+  let passsengerSurcharge = 0;
+  if (numberOfPeople >= 30) {
+    passsengerSurcharge = 0.25;
+  }
+  const totalPrice = basePrice + distanceCharge + passsengerSurcharge;
+  return `$${totalPrice.toFixed(2)}`;
+};
