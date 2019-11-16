@@ -208,3 +208,25 @@ const dynamicPricing = (numberOfPeople, distanceTraveled) => {
   const totalPrice = basePrice + distanceCharge + passsengerSurcharge;
   return `$${totalPrice.toFixed(2)}`;
 };
+
+// DAY 15
+
+const finalPosition = moves => {
+  let x = 0;
+  let y = 0;
+  moves.forEach(move => {
+    if (move === "north") {
+      y++;
+    }
+    if (move === "south") {
+      y--;
+    }
+    if (move === "east") {
+      x++;
+    }
+    if (move === "west") {
+      x--;
+    }
+  });
+  return [x, y];
+};
