@@ -230,3 +230,12 @@ const finalPosition = moves => {
   });
   return [x, y];
 };
+
+// DAY 16
+
+const festivalColours = color1 => {
+  const color2 = color1 + 150 < 360 ? color1 + 150 : color1 - 210;
+  const color3 = color1 + 210 < 360 ? color1 + 210 : color1 - 150;
+  const colors = [color2, color3].sort((a, b) => a > b);
+  return colors;
+};
