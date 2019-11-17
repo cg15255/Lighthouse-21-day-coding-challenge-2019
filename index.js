@@ -239,3 +239,15 @@ const festivalColours = color1 => {
   const colors = [color2, color3].sort((a, b) => a > b);
   return colors;
 };
+
+// DAY 17
+
+const judgeVegetable = (vegetables, metric) => {
+  const results = vegetables.reduce((leader, submission) => {
+    if (submission[metric] > leader[metric] || !leader[metric]) {
+      leader = submission;
+    }
+    return leader;
+  }, {});
+  return results.submitter;
+};
