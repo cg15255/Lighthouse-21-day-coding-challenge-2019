@@ -251,3 +251,35 @@ const judgeVegetable = (vegetables, metric) => {
   }, {});
   return results.submitter;
 };
+
+// DAY 18
+
+const countTickets = tickets => {
+  const totals = tickets.reduce(
+    (obj, curr) => {
+      obj[curr]++;
+      return obj;
+    },
+    { green: 0, red: 0, blue: 0 }
+  );
+  return totals;
+};
+
+const bestOdds = (tickets, raffleEntries) => {
+  const arr = countTickets(tickets);
+  const keys = Object.keys(arr);
+  const totalArr = [];
+  keys.forEach(key => totalArr.push([key, arr[key] / raffleEntries[key]]));
+  const sorted = totalArr.sort((a, b) => {
+    if (a[1] === b[1]) {
+      return 0;
+    }
+    if (a[1] < b[1]) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+  const highest = sorted[0][0];
+  return `You have the best odds of winning the ${highest} raffle`;
+};
