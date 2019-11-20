@@ -283,3 +283,26 @@ const bestOdds = (tickets, raffleEntries) => {
   const highest = sorted[0][0];
   return `You have the best odds of winning the ${highest} raffle`;
 };
+
+// DAY 19
+
+const pumpkinSpice = money => {
+  let moneyLeft = money;
+  const totals = [0, 0, 0, 0];
+  while (moneyLeft >= 5) {
+    totals[0]++;
+    moneyLeft -= 5;
+    totals[3] += 30;
+  }
+  while (moneyLeft >= 3) {
+    totals[1]++;
+    moneyLeft -= 3;
+    totals[3] += 15;
+  }
+  while (moneyLeft >= 1) {
+    totals[2]++;
+    moneyLeft -= 1;
+    totals[3] += 3;
+  }
+  return totals;
+};
