@@ -306,3 +306,37 @@ const pumpkinSpice = money => {
   }
   return totals;
 };
+
+// DAY 20
+
+// Use the value below whenever you need the value of Pi
+
+const PI = 3.14159;
+
+const sphereVolume = function(radius) {
+  return (4 / 3) * PI * Math.pow(radius, 3);
+};
+
+const coneVolume = function(radius, height) {
+  return (1 / 3) * PI * height * Math.pow(radius, 2);
+};
+
+const prismVolume = function(height, width, depth) {
+  return height * width * depth;
+};
+
+const totalVolume = function(solids) {
+  return (total = solids.reduce((totalVolume, shape) => {
+    if (shape.type === "sphere") {
+      totalVolume += sphereVolume(shape.radius);
+    }
+    if (shape.type === "cone") {
+      totalVolume += coneVolume(shape.radius, shape.height);
+    }
+    if (shape.type === "prism") {
+      console.log("prism");
+      totalVolume += prismVolume(shape.height, shape.width, shape.depth);
+    }
+    return totalVolume;
+  }, 0));
+};
