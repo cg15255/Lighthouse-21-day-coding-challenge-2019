@@ -340,3 +340,23 @@ const totalVolume = function(solids) {
     return totalVolume;
   }, 0));
 };
+
+// DAY 21
+
+const ingredientCheck = (bakery, ingredients) =>
+  (ingredientsInBakery = ingredients.reduce((acc, ingredient) => {
+    acc.push(bakery.includes(ingredient));
+    return acc;
+  }, []));
+
+const chooseRecipe = function(bakeryA, bakeryB, recipes) {
+  let chosenRecipe = "";
+  recipes.forEach(recipe => {
+    const [bakeryA1, bakeryA2] = ingredientCheck(bakeryA, recipe.ingredients);
+    const [bakeryB1, bakeryB2] = ingredientCheck(bakeryB, recipe.ingredients);
+    if ((bakeryA1 && bakeryB2) || (bakeryA2 && bakeryB1)) {
+      chosenRecipe = recipe.name;
+    }
+  });
+  return chosenRecipe;
+};
